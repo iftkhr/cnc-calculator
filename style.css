@@ -185,7 +185,7 @@ hr {
 	display: none;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
 	#calculator {
 		margin: auto;
 		width: 75vw;

@@ -2,7 +2,6 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./style.css" />
 		<title>CNC Calculator</title>
@@ -10,6 +9,7 @@
 	<body>
 		<div id="calculator">
 			<div class="heading"><h1>Chip Load Calculator</h1></div>
+
 			<div class="unit-dropdown">
 				<span class="title">Choose units:</span>
 				<select name="unit" id="unit" onchange="calculate()">
@@ -17,6 +17,7 @@
 					<option value="mm">Millimeters</option>
 				</select>
 			</div>
+
 			<div class="material-dropdown">
 				<span class="title">Choose material:</span>
 				<select name="material" id="material" onchange="calculate()">
@@ -27,7 +28,9 @@
 					<option value="hard-plastic">Hard Plastic</option>
 				</select>
 			</div>
+
 			<hr />
+
 			<div class="diameter hide" id="diameter-mm" onchange="calculate()">
 				<span class="title">Choose Bit Size:</span>
 				<div class="diameter-value">
@@ -47,6 +50,7 @@
 					<label for="13">>=13 mm</label>
 				</div>
 			</div>
+
 			<div class="diameter" id="diameter-in" onchange="calculate()">
 				<span class="title">Choose Bit Size:</span>
 				<div class="diameter-value">
@@ -66,7 +70,9 @@
 					<label for="1/2">>=1/2 in</label>
 				</div>
 			</div>
+
 			<hr />
+
 			<div class="inputs" oninput="calculate()">
 				<div class="feedrate">
 					<label for="feedrate-range">Feed Rate</label>
@@ -161,18 +167,20 @@
 					/>
 				</div>
 			</div>
+
 			<hr />
+
 			<div class="chipload" onchange="calculate()">
 				<span class="result">Your Chip Load is</span>
 				<span id="result"></span>
 			</div>
+
 			<div class="gauge" onchange="calculate()">
 				<span id="low"></span>
 				<div id="meter"></div>
 				<span id="high"></span>
 			</div>
 		</div>
-
 		<script src="./main.js"></script>
 	</body>
 </html>
