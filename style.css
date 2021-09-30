@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body {
+	display: grid;
+	justify-content: center;
+	background: #dae0f2;
+	font-size: 16px;
+	font-family: 'Ubuntu', sans-serif;
+	color: #111344;
+}
+
+#calculator {
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	justify-items: center;
+	align-items: center;
+	width: 50vw;
+	min-height: 900px;
+	height: auto;
+	padding: 20px;
+	background: #efe9e7;
+	border-radius: 30px;
+	box-shadow: 0px 0px 5px 0px #bbb;
+}
+
+select {
+	background: #dae0f2;
+	border: none;
+	border-radius: 100px;
+	padding: 10px;
+	font-size: 1rem;
+	width: 200px;
+}
+
+select:focus {
+	outline: none;
+}
+
+hr {
+	width: 80%;
+	grid-column: span 2;
+	color: rgba(17, 19, 68, 0.5);
+	border-radius: 100%;
+}
+
+.heading,
+.diameter,
+.inputs {
+	grid-column: span 2;
+}
+
+.heading {
+	margin: 0%;
+	font-size: 1rem;
+}
+
+.unit-dropdown,
+.material-dropdown,
+.diameter,
+.inputs,
+.chipload {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	gap: 10px;
+	font-size: 1.5rem;
+}
+
+.diameter {
+	grid-template-columns: repeat(4, 4fr);
+	gap: 50px;
+}
+
+.diameter > .title {
+	grid-column: span 4;
+}
+
+.diameter > div {
+	display: grid;
+	gap: 10px;
+	font-size: 1.25rem;
+	color: #40434e;
+}
+
+.diameter-value {
+	display: grid;
+	justify-items: center;
+}
+
+.inputs {
+	grid-template-columns: repeat(3, 3fr);
+	gap: 50px;
+}
+
+#feedrate-value,
+#rpm-value,
+#flutes-value {
+	color: #40434e;
+	font-size: 1.25rem;
+	margin-bottom: 5px;
+}
+
+.feedrate,
+.rpm,
+.flutes {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+}
+
+.slider {
+	-webkit-appearance: none;
+	width: 200px;
+	height: 15px;
+	background: rgba(187, 187, 187, 0.5);
+	outline: none;
+	border-radius: 10px;
+}
+
+.slider:hover {
+	background: rgba(187, 187, 187, 1);
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	background: #111344;
+	cursor: pointer;
+	border-radius: 25px;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	width: 25px;
+	height: 25px;
+	background: #111344;
+	cursor: pointer;
+	border-radius: 25px;
+}
+
+#result {
+	font-weight: 900;
+	background: #111344;
+	color: #efe9e7;
+	padding: 5px;
+	font-size: 1.75rem;
+}
+
+.gauge {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	align-items: center;
+	gap: 5px;
+}
+
+#meter {
+	display: grid;
+	grid-template-columns: repeat(100, 1%);
+	align-content: center;
+	width: 200px;
+	height: 50px;
+	border-radius: 100px;
+	background: linear-gradient(
+		to right,
+		#db4437 10px,
+		#f4b400 60px,
+		#0f9d58 100px,
+		#f4b400 140px,
+		#db4437 190px
+	);
+}
+
+#needle {
+	height: 60px;
+	width: 5px;
+	background: #111344;
+	border-radius: 100%;
+}
+
+.hide {
+	display: none;
+}
+
+@media screen and (max-width: 1200px) {
+	#calculator {
+		margin: auto;
+		width: 75vw;
+	}
+
+	.slider {
+		width: 150px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	#calculator {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.unit-dropdown,
+	.material-dropdown,
+	.chipload {
+		grid-column: span 2;
+	}
+
+	.diameter {
+		grid-template-columns: repeat(2, 2fr);
+	}
+
+	.diameter > .title {
+		grid-column: span 2;
+	}
+
+	.inputs {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 20px;
+	}
+
+	.slider {
+		width: 200px;
+	}
+
+	#result {
+		margin-bottom: 10px;
+	}
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<title>CNC Calculator</title>
+	</head>
+	<body>
+		<div id="calculator">
+			<div class="heading"><h1>Chip Load Calculator</h1></div>
+			<div class="unit-dropdown">
+				<span class="title">Choose units:</span>
+				<select name="unit" id="unit" onchange="calculate()">
+					<option value="in">Inches</option>
+					<option value="mm">Millimeters</option>
+				</select>
+			</div>
+			<div class="material-dropdown">
+				<span class="title">Choose material:</span>
+				<select name="material" id="material" onchange="calculate()">
+					<option value="hardwood">Hardwood</option>
+					<option value="softwood">Softwood</option>
+					<option value="particle-wood">MDF / Particle Wood</option>
+					<option value="soft-plastic">Soft Plastic</option>
+					<option value="hard-plastic">Hard Plastic</option>
+				</select>
+			</div>
+			<hr />
+			<div class="diameter hide" id="diameter-mm" onchange="calculate()">
+				<span class="title">Choose Bit Size:</span>
+				<div class="diameter-value">
+					<input type="radio" name="dia-mm" id="3" checked />
+					<label for="3">3 mm</label>
+				</div>
+				<div class="diameter-value">
+					<input type="radio" name="dia-mm" id="6" />
+					<label for="6">6 mm</label>
+				</div>
+				<div class="diameter-value">
+					<input type="radio" name="dia-mm" id="10" />
+					<label for="10">10 mm</label>
+				</div>
+				<div class="diameter-value">
+					<input type="radio" name="dia-mm" id="13" />
+					<label for="13">>=13 mm</label>
+				</div>
+			</div>
+			<div class="diameter" id="diameter-in" onchange="calculate()">
+				<span class="title">Choose Bit Size:</span>
+				<div class="diameter-value">
+					<input type="radio" name="dia-in" id="1/8" checked />
+					<label for="1/8">1/8 in</label>
+				</div>
+				<div class="diameter-value">
+					<input type="radio" name="dia-in" id="1/4" />
+					<label for="1/4">1/4 in</label>
+				</div>
+				<div class="diameter-value">
+					<input type="radio" name="dia-in" id="3/8" />
+					<label for="3/8">3/8 in</label>
+				</div>
+				<div class="diameter-value">
+					<input type="radio" name="dia-in" id="1/2" />
+					<label for="1/2">>=1/2 in</label>
+				</div>
+			</div>
+			<hr />
+			<div class="inputs" onchange="calculate()">
+				<div class="feedrate">
+					<label for="feedrate-range">Feed Rate</label>
+					<span id="feedrate-value"></span>
+					<input
+						type="range"
+						name="feedrate-range"
+						id="feedrate-range"
+						class="slider"
+						min="1"
+						max="1000"
+						onchange="sliderValues()"
+					/>
+				</div>
+				<div class="rpm">
+					<label for="rpm-range">RPM</label>
+					<span id="rpm-value"></span>
+					<input
+						type="range"
+						name="rpm-range"
+						id="rpm-range"
+						class="slider"
+						min="1000"
+						max="30000"
+						onchange="sliderValues()"
+					/>
+				</div>
+				<div class="flutes">
+					<label for="flutes-range">Flutes</label>
+					<span id="flutes-value"></span>
+					<input
+						type="range"
+						name="flutes-range"
+						id="flutes-range"
+						class="slider"
+						min="1"
+						max="5"
+						onchange="sliderValues()"
+					/>
+				</div>
+			</div>
+			<hr />
+			<div class="chipload" onchange="calculate()">
+				<span class="result">Your Chip Load is</span>
+				<span id="result"></span>
+			</div>
+			<div class="gauge" onchange="calculate()">
+				<span id="low"></span>
+				<div id="meter"></div>
+				<span id="high"></span>
+			</div>
+		</div>
+
+		<script src="./main.js"></script>
+	</body>
+</html>
