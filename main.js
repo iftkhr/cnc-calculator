@@ -72,11 +72,17 @@ window.onload = calculate();
 
 function sliderValues() {
 	document.getElementById('feedrate-value').innerHTML =
-		document.getElementById('feedrate-range').value;
+		parseInt(document.getElementById('feedrate-range-100').value) +
+		parseInt(document.getElementById('feedrate-range-10').value) +
+		parseInt(document.getElementById('feedrate-range-1').value);
 	document.getElementById('rpm-value').innerHTML =
-		document.getElementById('rpm-range').value;
-	document.getElementById('flutes-value').innerHTML =
-		document.getElementById('flutes-range').value;
+		parseInt(document.getElementById('rpm-range-1000').value) +
+		parseInt(document.getElementById('rpm-range-100').value) +
+		parseInt(document.getElementById('rpm-range-10').value) +
+		parseInt(document.getElementById('rpm-range-1').value);
+	document.getElementById('flutes-value').innerHTML = parseInt(
+		document.getElementById('flutes-range-1').value
+	);
 }
 
 function gaugeNeedle() {
@@ -99,9 +105,11 @@ function calculate() {
 		}
 	}
 
-	var feedRate = document.getElementById('feedrate-range').value;
-	var rpm = document.getElementById('rpm-range').value;
-	var flutes = document.getElementById('flutes-range').value;
+	var feedRate = parseInt(
+		document.getElementById('feedrate-value').innerHTML
+	);
+	var rpm = parseInt(document.getElementById('rpm-value').innerHTML);
+	var flutes = parseInt(document.getElementById('flutes-value').innerHTML);
 
 	var chipLoad = feedRate / (rpm * flutes);
 

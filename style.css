@@ -61,11 +61,13 @@ hr {
 .chipload {
 	display: grid;
 	justify-items: center;
-	align-items: center;
 	gap: 10px;
 	font-size: 1.5rem;
 }
 
+.inputs {
+	align-items: start;
+}
 .diameter {
 	grid-template-columns: repeat(4, 4fr);
 	gap: 50px;
@@ -105,7 +107,7 @@ hr {
 .flutes {
 	display: grid;
 	justify-items: center;
-	align-items: center;
+	gap: 10px;
 }
 
 .slider {

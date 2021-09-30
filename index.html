@@ -67,18 +67,39 @@
 				</div>
 			</div>
 			<hr />
-			<div class="inputs" onchange="calculate()">
+			<div class="inputs" oninput="calculate()">
 				<div class="feedrate">
 					<label for="feedrate-range">Feed Rate</label>
 					<span id="feedrate-value"></span>
 					<input
 						type="range"
-						name="feedrate-range"
-						id="feedrate-range"
+						name="feedrate-range-100"
+						id="feedrate-range-100"
+						class="slider"
+						min="0"
+						max="1000"
+						step="100"
+						oninput="sliderValues()"
+					/>
+					<input
+						type="range"
+						name="feedrate-range-10"
+						id="feedrate-range-10"
+						class="slider"
+						min="0"
+						max="100"
+						step="10"
+						oninput="sliderValues()"
+					/>
+					<input
+						type="range"
+						name="feedrate-range-1"
+						id="feedrate-range-1"
 						class="slider"
 						min="1"
-						max="1000"
-						onchange="sliderValues()"
+						max="10"
+						step="1"
+						oninput="sliderValues()"
 					/>
 				</div>
 				<div class="rpm">
@@ -86,12 +107,43 @@
 					<span id="rpm-value"></span>
 					<input
 						type="range"
-						name="rpm-range"
-						id="rpm-range"
+						name="rpm-range-1000"
+						id="rpm-range-1000"
 						class="slider"
-						min="1000"
+						min="0"
 						max="30000"
-						onchange="sliderValues()"
+						step="1000"
+						oninput="sliderValues()"
+					/>
+					<input
+						type="range"
+						name="rpm-range-100"
+						id="rpm-range-100"
+						class="slider"
+						min="0"
+						max="1000"
+						step="100"
+						oninput="sliderValues()"
+					/>
+					<input
+						type="range"
+						name="rpm-range-10"
+						id="rpm-range-10"
+						class="slider"
+						min="0"
+						max="100"
+						step="10"
+						oninput="sliderValues()"
+					/>
+					<input
+						type="range"
+						name="rpm-range-1"
+						id="rpm-range-1"
+						class="slider"
+						min="1"
+						max="10"
+						step="1"
+						oninput="sliderValues()"
 					/>
 				</div>
 				<div class="flutes">
@@ -99,12 +151,13 @@
 					<span id="flutes-value"></span>
 					<input
 						type="range"
-						name="flutes-range"
-						id="flutes-range"
+						name="flutes-range-1"
+						id="flutes-range-1"
 						class="slider"
 						min="1"
 						max="5"
-						onchange="sliderValues()"
+						step="1"
+						oninput="sliderValues()"
 					/>
 				</div>
 			</div>
